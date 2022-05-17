@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Profile Card</title>
+
+    <meta charset="UTF-8" />
+    <meta author="shivalila patil" />
+    <meta http-equiv="refresh" content="3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <br />
+
+  <body>
+    <mat-toolbar color="primary">
+      <span>Profiles</span>
+    </mat-toolbar>
+    <div class="card">
+      <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div
+          [fxFlex]="100 / gridColumns + '%'"
+          fxFlex.xs="100%"
+          fxFlex.sm="33%"
+          *ngFor="let obj of model"
+        >
+          <div class="image">
+            <img src="{{ obj.image }}" alt="profile image" />
+          </div>
+
+          <div class="name">
+            <h2>{{ obj.name }}</h2>
+          </div>
+          <div class="mail">
+            <p>{{ obj.email }}</p>
+          </div>
+          <div class="contact">
+            <p>{{ obj.contact }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
